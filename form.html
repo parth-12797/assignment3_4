@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel.com</title>
+	<link rel="stylesheet" type="text/css" href="form.css">
+  <script type="text/javascript" src="jquery_min.js"></script>
+  <script type="text/javascript" src="form.js"></script>
+  <style type="text/css">
+    .validate{
+      color: red;
+      margin-top: -29px;
+    font-size: 15px;
+    float: left;
+    }
+  </style>
+  <script type="text/javascript">
+    function display_field()
+{
+  //alert("parth");
+  var pro=document.getElementById("medical").value;
+  //alert(pro);
+  if(pro=="yes")
+  {
+ document.getElementById("med_problem").style.display = "block";
+  document.getElementById("med_problem").required = true;
+
+}
+else
+{
+ 
+document.getElementById("med_problem").style.display = "none"; 
+  document.getElementById("med_problem").required = false;
+
+}
+}
+
+  </script>
+</head>
+<body>
+	<div style="margin-top: -19px;
+    size: auto;
+    margin-bottom: 26px;
+    margin-left: -8px;
+    margin-right: -13px;">
+	<header class="page-header" style="background:black;">
+    <div><img src="travel.jpg">
+    	<h2 style="padding-top: 25px;">Travel.com</h2></div>
+
+
+</header>
+</div>
+
+<div class="form-style-5">
+<h1 style="text-align: center;">Travel Request Form</h1>
+<hr>
+<form method="post">
+ <fieldset>
+<legend><span class="number">1</span> Passenger Info</legend>
+<input type="text" name="f_name" id="f_name" placeholder="First name*" required="">
+<input type="text" name="l_name" id="l_name" placeholder="Last name*" required="">
+<div style="text-align: left; margin-bottom: 30px;">
+gender:
+<input type="radio" id="male" name="gender" id="gender" value="male">male
+<input type="radio" id="female" name="gender" id="gender" value="female">female
+<input type="radio" id="other" name="gender" id="gender" value="other">other
+</div>
+
+</fieldset>
+<fieldset>
+<legend><span class="number">2</span> Contact Info</legend>
+<input type="email" name="email" placeholder="Your Email *" id="email"><span class="validate" id="check_email" required=""></span>
+<input type="email" name="verify_email" id="verify_email" placeholder="verify email *"><span class="validate" id="match_email" required=""></span>
+<input type="text" name="phone_no"  id="phone" placeholder="phone number *" required=""><span class="validate" id="check_phone"></span>
+</fieldset>
+<fieldset>
+<legend><span class="number">3</span> Address info</legend>
+<input type="text" name="street_address" placeholder="street address">
+<input type="text" name="street_address" placeholder="street address line 2">
+<input type="text" name="street_address" placeholder="city">
+<input type="text" name="street_address" placeholder="state/province">
+<input type="text" name="street_address" placeholder="postal code">
+<select id="country" name="country">
+  <option value="India">India</option>
+  <option value="Canada">Canada</option>
+  <option value="USA">USA</option>
+  <option value="Australia">Australia</option>
+  <option value="Newzeland">NEWzeland</option>
+  <option value="UK">UK</option> 
+</select>      
+</fieldset>
+<fieldset>
+<legend><span class="number">4</span> Travel Info</legend>
+<input type="date" name="Travel date" id="travel_date" placeholder="" required="">
+<select id="from" name="country" selected="from" required="">
+  <option value="">--From--</option>
+  <option value="India">India</option>
+  <option value="Canada">Canada</option>
+  <option value="USA">USA</option>
+  <option value="Australia">Australia</option>
+  <option value="Newzeland">NEWzeland</option>
+  <option value="UK">UK</option> 
+</select> 
+<select id="to" name="country" selected="TO" required="">
+<option value="">--To--</option>
+ <option value="India">India</option>
+  <option value="Canada">Canada</option>
+  <option value="USA">USA</option>
+  <option value="Australia">Australia</option>
+  <option value="Newzeland">NEWzeland</option>
+  <option value="UK">UK</option> 
+</select> 
+</fieldset>
+<fieldset>
+<legend><span class="number">5</span> Other info</legend>
+<select id="medical" name="medical" selected="TO" onchange="display_field()">
+<option value="ddd">--do you have any medical issue:--*</option>
+ <option value="yes">Yes</option>
+ <option value="No">No</option>
+</select> 
+<input type="text" id="med_problem" name="medical problem" placeholder="enter medical problem" hidden="" required="false">
+</fieldset>
+<p style="text-align: left; font-size: 10px;">privacy policy:<br>
+Travel is committed to respecting your privacy and protecting your personal information</p>
+<p style="text-align: left; font-size: 10px;">legal:<br>
+By accepting this you are accepting our terms and condition.</p>
+<p style="text-align: left; font-size: 10px;">specific instruction:<br>
+you must bring covid negative result before you board your flight</p>
+
+<p style="text-align: left; font-size: 10px;color: red">terms and conditions apply*</p>
+
+<input type="submit" value="submit" style="margin-top: 50px;" id="submit" onclick="return check_all()">
+</div>
+</form>
+</body>
+</html>
